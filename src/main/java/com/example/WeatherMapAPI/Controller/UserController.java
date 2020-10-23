@@ -26,9 +26,10 @@ public class UserController {
 		
 		
 	}
-	
-	
-	  @GetMapping("/find/{id}") 
+
+
+
+	  @GetMapping("/find/{id}")
 	  public UserDto findByUserId(@PathVariable (value ="id") String userId) {
 		  
 		  User user =    userService.findByUserId(userId);
@@ -69,12 +70,12 @@ public class UserController {
 
 		 }
 
-	@GetMapping("/getUserByLanguage")
-	public List<UserDto> getAllUsersByLanguage() {
-		List<User>  userList = userService.getAllUsersByLanguage("EN");
+
+	@GetMapping("/findUsersByLanguage")
+	public List<UserDto> findAllENUsers() {
+		List<User>  userList = userService.findAllENUsers();
 		return userConverter.entityToDto(userList);
 
 	}
-
 
 }

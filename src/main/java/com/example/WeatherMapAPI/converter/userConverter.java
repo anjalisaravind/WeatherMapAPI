@@ -16,6 +16,7 @@ public class userConverter {
 		dto.setUserId(user.getUserId());
 		dto.setUserName(user.getUserName());
 		dto.setUserLocation(user.getUserLocation());
+		dto.setUserLanguage(user.getUserLanguage());
 		return dto;
 		
 	}
@@ -31,6 +32,7 @@ public class userConverter {
 		user.setUserId(userDto.getUserId());
 		user.setUserName(userDto.getUserName());
 		user.setUserLocation(userDto.getUserLocation());
+		user.setUserLanguage(userDto.getUserLanguage());
 		return user;
 	}
 	

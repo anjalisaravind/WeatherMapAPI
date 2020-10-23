@@ -5,7 +5,10 @@ import com.example.WeatherMapAPI.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Clock;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -20,6 +23,7 @@ public class UserServiceImpl implements UserService{
 	 return userRepository.findAll();
 		
 	}
+
 	public User findByUserId(String userId) {
 		 return userRepository.findByUserId(userId);
 	}
@@ -43,14 +47,13 @@ public class UserServiceImpl implements UserService{
 		 return "deleted User " +user.getUserName(); 
 		 }
 
-		 //Get users by language
-	public List<User> getAllUsersByLanguage(String userLanguage) {
+//Get users by language
+public List<User> findAllENUsers() {
+	List<User> userList =  userRepository.findAll();
+	return userList.stream().filter(user-> user.getUserLanguage().contains("EN")).collect(Collectors.toList());
 
-		List<User> userList =  userRepository.findAll();
+}
 
-
-		return null;
-	}
 
 
 }

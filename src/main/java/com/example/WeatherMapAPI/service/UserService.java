@@ -12,7 +12,6 @@ public interface UserService {
 	public User findByUserId(String userId);
 	public String deleteAll();
 	public String deleteByUserId(String userId) ;
-	public List<User> getAllUsersByLanguage(String userLanguage);
-	
-	
+	public List<User> findAllENUsers();
+
 }

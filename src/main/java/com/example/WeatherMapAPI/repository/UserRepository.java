@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends MongoRepository<User, String>{
 	public User findByUserId(String userId);
-	public List<User> getAllUsersByLanguage(String userLanguage);
+
 
 }
